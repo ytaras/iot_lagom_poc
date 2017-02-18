@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <profile name="SBT 1" modules="ss,ss-api,ss-impl,ss-mapping-api,ss-mapping-impl,ss-stream-api,ss-stream-impl" />
+  </component>
+</project>

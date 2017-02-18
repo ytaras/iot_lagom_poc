@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaSbtSettings">
+    <option name="linkedExternalProjectsSettings">
+      <SbtProjectSettings>
+        <option name="createEmptyContentRootDirectories" value="true" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="jdk" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/project" />
+            <option value="$PROJECT_DIR$/ss-api" />
+            <option value="$PROJECT_DIR$/ss-api/project" />
+            <option value="$PROJECT_DIR$/ss-impl" />
+            <option value="$PROJECT_DIR$/ss-impl/project" />
+            <option value="$PROJECT_DIR$/ss-mapping-api" />
+            <option value="$PROJECT_DIR$/ss-mapping-api/project" />
+            <option value="$PROJECT_DIR$/ss-mapping-impl" />
+            <option value="$PROJECT_DIR$/ss-mapping-impl/project" />
+            <option value="$PROJECT_DIR$/ss-stream-api" />
+            <option value="$PROJECT_DIR$/ss-stream-api/project" />
+            <option value="$PROJECT_DIR$/ss-stream-impl" />
+            <option value="$PROJECT_DIR$/ss-stream-impl/project" />
+          </set>
+        </option>
+        <option name="resolveJavadocs" value="true" />
+        <option name="useAutoImport" value="true" />
+        <option name="useOurOwnAutoImport" value="true" />
+      </SbtProjectSettings>
+    </option>
+  </component>
+</project>
