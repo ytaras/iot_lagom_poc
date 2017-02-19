@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
       <module name="ss-impl" target="1.8" />
+      <module name="ss-mapping-impl" target="1.8" />
       <module name="ss-stream-impl" target="1.8" />
     </bytecodeTargetLevel>
   </component>

@@ -2,12 +2,12 @@ package com.ss.ss.impl
 
 import com.lightbend.lagom.scaladsl.api.ServiceLocator
 import com.lightbend.lagom.scaladsl.api.ServiceLocator.NoServiceLocator
+import com.lightbend.lagom.scaladsl.devmode.LagomDevModeComponents
 import com.lightbend.lagom.scaladsl.persistence.cassandra.CassandraPersistenceComponents
 import com.lightbend.lagom.scaladsl.server._
-import com.lightbend.lagom.scaladsl.devmode.LagomDevModeComponents
-import play.api.libs.ws.ahc.AhcWSComponents
-import com.ss.ss.api.SsService
 import com.softwaremill.macwire._
+import com.ss.ss.api.SsService
+import play.api.libs.ws.ahc.AhcWSComponents
 
 class SsLoader extends LagomApplicationLoader {
 

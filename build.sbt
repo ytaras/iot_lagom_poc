@@ -26,6 +26,7 @@ lazy val `ss-mapping-api` = (project in file("ss-mapping-api"))
     )
 
 lazy val `ss-mapping-impl` = (project in file("ss-mapping-impl"))
+  .enablePlugins(LagomScala)
   .settings(
     libraryDependencies ++= Seq(
       lagomScaladslPersistenceCassandra,
@@ -33,7 +34,9 @@ lazy val `ss-mapping-impl` = (project in file("ss-mapping-impl"))
       macwire,
       scalaTest
     )
-  ).dependsOn(`ss-mapping-api`)
+  )
+  .dependsOn(`ss-mapping-api`)
+  .settings(lagomForkedTestSettings: _*)
 
 lazy val `ss-impl` = (project in file("ss-impl"))
   .enablePlugins(LagomScala)
