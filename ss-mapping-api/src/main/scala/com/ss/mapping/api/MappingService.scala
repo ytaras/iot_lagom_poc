@@ -13,18 +13,20 @@ import scala.concurrent.Future
   */
 trait MappingService extends Service {
 
-  def sensorMapping: ServiceCall[GlobalSensorId, SensorMapping]
+  def sensorMapping(nodeId: Long, sensorId: Int): ServiceCall[NotUsed, SensorMapping]
+  def registerMapping(nodeId: Long, sensorId: Int): ServiceCall[SensorMapping, NotUsed]
 
   override final def descriptor: Descriptor = {
     import Service._
     named("mapping").withCalls(
-      pathCall("/api/sensorMapping", sensorMapping)
+      pathCall("/api/sensorMapping/nodes/:node/sensors/:sensor", sensorMapping _),
+      pathCall("/api/sensorMapping/nodes/:node/sensors/:sensor", registerMapping _)
     ).withAutoAcl(true)
   }
 
 }
 
-case class GlobalSensorId(nodeId: Long, sensorId: String)
+case class GlobalSensorId(nodeId: Long, sensorId: Int)
 case class SensorMapping(objectId: UUID, domain: String, metricName: String)
 object GlobalSensorId {
   implicit val jsonFormat: Format[GlobalSensorId] = Json.format[GlobalSensorId]
