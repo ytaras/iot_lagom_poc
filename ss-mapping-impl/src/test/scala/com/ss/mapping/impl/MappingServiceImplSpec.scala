@@ -15,7 +15,7 @@ import scala.util.Random
 /**
   * Created by ytaras on 24.02.17.
   */
-class MappingServiceImplTest extends AsyncWordSpec with Matchers with BeforeAndAfterAll {
+class MappingServiceImplSpec extends AsyncWordSpec with Matchers with BeforeAndAfterAll {
 
   private val server = ServiceTest.startServer(
     ServiceTest.defaultSetup
@@ -46,7 +46,12 @@ class MappingServiceImplTest extends AsyncWordSpec with Matchers with BeforeAndA
         getMapping(genSensorId)
       }.map(ex => ex.errorCode should ===(TransportErrorCode.NotFound))
     }
-    "update mapping" in withClient { implicit client =>
+    "return 404 for not registered mapping if trying to delete" in withClient { implicit client =>
+      recoverToExceptionIf[TransportException] {
+        unregisterMapping(genSensorId)
+      }.map(ex => ex.errorCode should ===(TransportErrorCode.NotFound))
+    }
+    "updates mapping" in withClient { implicit client =>
       val sid = genSensorId
       val mapping1 = genMapping
       val mapping2 = genMapping
@@ -56,12 +61,23 @@ class MappingServiceImplTest extends AsyncWordSpec with Matchers with BeforeAndA
         result <- getMapping(sid)
       } yield result should ===(mapping2)
     }
+    "unregisters mapping" in withClient { implicit client =>
+      val sid = genSensorId
+      val mapping = genMapping
+      for {
+        NotUsed <- registerMapping(sid, mapping)
+        NotUsed <- unregisterMapping(sid)
+        ex <- recoverToExceptionIf[TransportException](getMapping(sid))
+      } yield ex.errorCode should ===(TransportErrorCode.NotFound)
+    }
   }
 
   def getMapping(globalSensorId: GlobalSensorId)(implicit client: MappingService): Future[SensorMapping] =
     client.sensorMapping(globalSensorId.nodeId, globalSensorId.sensorId).invoke()
   def registerMapping(globalSensorId: GlobalSensorId, sensorMapping: SensorMapping)(implicit client: MappingService): Future[NotUsed] =
     client.registerMapping(globalSensorId.nodeId, globalSensorId.sensorId).invoke(sensorMapping)
+  def unregisterMapping(globalSensorId: GlobalSensorId)(implicit client: MappingService): Future[NotUsed] =
+    client.unregisterMapping(globalSensorId.nodeId, globalSensorId.sensorId).invoke()
   def genMapping: SensorMapping = SensorMapping(UUID.randomUUID(), "doman", "metric")
   def genSensorId: GlobalSensorId = GlobalSensorId(Random.nextLong(), Random.nextInt())
 

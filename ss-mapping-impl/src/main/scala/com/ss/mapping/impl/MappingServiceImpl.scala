@@ -2,12 +2,10 @@ package com.ss.mapping.impl
 
 import akka.NotUsed
 import com.lightbend.lagom.scaladsl.api.ServiceCall
-import com.lightbend.lagom.scaladsl.api.transport.NotFound
-import com.lightbend.lagom.scaladsl.persistence.PersistentEntity.UnhandledCommandException
 import com.lightbend.lagom.scaladsl.persistence.PersistentEntityRegistry
-import com.ss.mapping.api.{GlobalSensorId, MappingService, SensorMapping}
+import com.ss.mapping.api.{MappingService, SensorMapping}
 
-import scala.concurrent.{ExecutionContext, Future}
+import scala.concurrent.ExecutionContext
 
 /**
   * Created by ytaras on 18.02.17.
@@ -19,6 +17,10 @@ class MappingServiceImpl(persistentEntityRegistry: PersistentEntityRegistry)(imp
   override def sensorMapping(nodeId: Long, sensorId: Int): ServiceCall[NotUsed, SensorMapping] = ServiceCall { _ =>
     mappingRef(nodeId, sensorId)
       .ask(LoadMapping)
+  }
+
+  override def unregisterMapping(nodeId: Long, sensorId: Int): ServiceCall[NotUsed, NotUsed] = ServiceCall { _ =>
+    mappingRef(nodeId, sensorId).ask(UnregisterMapping).map(_ => NotUsed)
   }
 
   private def entityId(nodeId: Long, sensorId: Int) = s"$nodeId:$sensorId"

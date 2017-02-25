@@ -3,6 +3,7 @@ package com.ss.mapping.api
 import java.util.UUID
 
 import akka.NotUsed
+import com.lightbend.lagom.scaladsl.api.transport.Method
 import com.lightbend.lagom.scaladsl.api.{Descriptor, Service, ServiceCall}
 import play.api.libs.json.{Format, Json}
 
@@ -15,12 +16,13 @@ trait MappingService extends Service {
 
   def sensorMapping(nodeId: Long, sensorId: Int): ServiceCall[NotUsed, SensorMapping]
   def registerMapping(nodeId: Long, sensorId: Int): ServiceCall[SensorMapping, NotUsed]
-
+  def unregisterMapping(nodeId: Long, sensorId: Int): ServiceCall[NotUsed, NotUsed]
   override final def descriptor: Descriptor = {
     import Service._
     named("mapping").withCalls(
       pathCall("/api/sensorMapping/nodes/:node/sensors/:sensor", sensorMapping _),
-      pathCall("/api/sensorMapping/nodes/:node/sensors/:sensor", registerMapping _)
+      pathCall("/api/sensorMapping/nodes/:node/sensors/:sensor", registerMapping _),
+      restCall(Method.DELETE, "/api/sensorMapping/nodes/:node/sensors/:sensor", unregisterMapping _)
     ).withAutoAcl(true)
   }
 

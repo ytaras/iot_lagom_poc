@@ -1,17 +1,15 @@
 package com.ss.mapping.impl
 
-import com.lightbend.lagom.internal.logback.LogbackLoggerConfigurator
-import com.lightbend.lagom.internal.scaladsl.server.ScaladslServiceRouter
 import com.lightbend.lagom.scaladsl.api.ServiceLocator.NoServiceLocator
 import com.lightbend.lagom.scaladsl.api.{Descriptor, ServiceLocator}
 import com.lightbend.lagom.scaladsl.devmode.LagomDevModeComponents
 import com.lightbend.lagom.scaladsl.persistence.cassandra.CassandraPersistenceComponents
 import com.lightbend.lagom.scaladsl.playjson.{JsonSerializer, JsonSerializerRegistry}
 import com.lightbend.lagom.scaladsl.server._
-import com.ss.mapping.api.MappingService
-import play.api.libs.ws.ahc.AhcWSComponents
 import com.softwaremill.macwire._
+import com.ss.mapping.api.MappingService
 import org.slf4j.LoggerFactory
+import play.api.libs.ws.ahc.AhcWSComponents
 
 import scala.collection.immutable.Seq
 
@@ -37,8 +35,9 @@ abstract class MappingApplication(context: LagomApplicationContext)
   extends LagomApplication(context)
     with CassandraPersistenceComponents
     with AhcWSComponents {
-  override def jsonSerializerRegistry: JsonSerializerRegistry = MappingSerializerRegistry
-
+  override def jsonSerializerRegistry: JsonSerializerRegistry = {
+    MappingSerializerRegistry
+  }
   override def lagomServer: LagomServer = {
     LagomServer.forServices(
       bindService[MappingService].to(wire[MappingServiceImpl])
@@ -47,5 +46,11 @@ abstract class MappingApplication(context: LagomApplicationContext)
 }
 
 object MappingSerializerRegistry extends JsonSerializerRegistry {
-  override def serializers: Seq[JsonSerializer[_]] = Seq()
+  override def serializers: Seq[JsonSerializer[_]] = Seq(
+    JsonSerializer[RegisterMapping],
+    JsonSerializer[MappingRegistered],
+    JsonSerializer[LoadMapping.type],
+    JsonSerializer[UnregisterMapping.type],
+    JsonSerializer[MappingUnregistered.type]
+  )
 }
