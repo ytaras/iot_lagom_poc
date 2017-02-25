@@ -43,6 +43,7 @@ abstract class MappingApplication(context: LagomApplicationContext)
       bindService[MappingService].to(wire[MappingServiceImpl])
     )
   }
+  readSide.register(wire[NodeReadEventsProcessor])
 }
 
 object MappingSerializerRegistry extends JsonSerializerRegistry {

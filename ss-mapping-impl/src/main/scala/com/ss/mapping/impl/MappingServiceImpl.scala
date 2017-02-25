@@ -2,7 +2,7 @@ package com.ss.mapping.impl
 
 import akka.NotUsed
 import com.lightbend.lagom.scaladsl.api.ServiceCall
-import com.lightbend.lagom.scaladsl.persistence.PersistentEntityRegistry
+import com.lightbend.lagom.scaladsl.persistence.{PersistentEntityRegistry, ReadSide}
 import com.ss.mapping.api.{MappingService, SensorMapping}
 
 import scala.concurrent.ExecutionContext

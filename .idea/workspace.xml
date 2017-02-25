@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e10d4a50-d586-4de3-b352-152bab1944d9" name="Default" comment="Added persistent impl for">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ss-mapping-impl/src/test/scala/com/ss/mapping/impl/MappingServiceImplTest.scala" afterPath="$PROJECT_DIR$/ss-mapping-impl/src/test/scala/com/ss/mapping/impl/MappingServiceImplSpec.scala" />
+    <list default="true" id="e10d4a50-d586-4de3-b352-152bab1944d9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/NodeReadEventsProcessor.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ss-mapping-api/src/main/scala/com/ss/mapping/api/MappingService.scala" afterPath="$PROJECT_DIR$/ss-mapping-api/src/main/scala/com/ss/mapping/api/MappingService.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/MappingLoader.scala" afterPath="$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/MappingLoader.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/MappingServiceImpl.scala" afterPath="$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/MappingServiceImpl.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/SensorMappingPersistentEntity.scala" afterPath="$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/SensorMappingPersistentEntity.scala" />
@@ -74,8 +73,8 @@
       <file leaf-file-name="MappingLoader.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/MappingLoader.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+            <state relative-caret-position="720">
+              <caret line="45" column="39" lean-forward="true" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
               <folding>
                 <element signature="e#29#100#0" expanded="true" />
               </folding>
@@ -83,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SensorMappingPersistentEntity.scala" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/SensorMappingPersistentEntity.scala">
+      <file leaf-file-name="NodeReadEventsProcessor.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/NodeReadEventsProcessor.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="57" column="72" lean-forward="false" selection-start-line="57" selection-start-column="72" selection-end-line="57" selection-end-column="72" />
+            <state relative-caret-position="486">
+              <caret line="27" column="93" lean-forward="false" selection-start-line="27" selection-start-column="93" selection-end-line="27" selection-end-column="93" />
               <folding>
                 <element signature="e#29#45#0" expanded="true" />
               </folding>
@@ -95,11 +94,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MappingServiceImplSpec.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ss-mapping-impl/src/test/scala/com/ss/mapping/impl/MappingServiceImplSpec.scala">
+      <file leaf-file-name="CassandraPersistenceComponents.scala" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.coursier/cache/v1/https/repo1.maven.org/maven2/com/lightbend/lagom/lagom-scaladsl-persistence-cassandra_2.11/1.3.0/lagom-scaladsl-persistence-cassandra_2.11-1.3.0-sources.jar!/com/lightbend/lagom/scaladsl/persistence/cassandra/CassandraPersistenceComponents.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="71" column="4" lean-forward="false" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
+            <state relative-caret-position="648">
+              <caret line="48" column="35" lean-forward="false" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+              <folding>
+                <element signature="n#!!doc" expanded="false" />
+                <element signature="e#137#215#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CassandraSession.scala" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.coursier/cache/v1/https/repo1.maven.org/maven2/com/lightbend/lagom/lagom-scaladsl-persistence-cassandra_2.11/1.3.0/lagom-scaladsl-persistence-cassandra_2.11-1.3.0-sources.jar!/com/lightbend/lagom/scaladsl/persistence/cassandra/CassandraSession.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+              <folding>
+                <element signature="n#!!doc" expanded="false" />
+                <element signature="e#137#178#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LagomServer.scala" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.coursier/cache/v1/https/repo1.maven.org/maven2/com/lightbend/lagom/lagom-scaladsl-server_2.11/1.3.0/lagom-scaladsl-server_2.11-1.3.0-sources.jar!/com/lightbend/lagom/scaladsl/server/LagomServer.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="882">
+              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -108,22 +133,10 @@
       <file leaf-file-name="MappingServiceImpl.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/MappingServiceImpl.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="216">
+              <caret line="12" column="75" lean-forward="false" selection-start-line="12" selection-start-column="75" selection-end-line="12" selection-end-column="75" />
               <folding>
                 <element signature="e#29#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MappingService.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ss-mapping-api/src/main/scala/com/ss/mapping/api/MappingService.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-              <folding>
-                <element signature="e#28#49#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -160,9 +173,10 @@
         <option value="$PROJECT_DIR$/ss-mapping-api/src/main/scala/com/ss/mapping/api/MappingService.scala" />
         <option value="$PROJECT_DIR$/ss-mapping-impl/src/test/scala/com/ss/mapping/impl/MappingServiceImplTest.scala" />
         <option value="$PROJECT_DIR$/ss-mapping-impl/src/test/scala/com/ss/mapping/impl/MappingServiceImplSpec.scala" />
-        <option value="$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/MappingServiceImpl.scala" />
-        <option value="$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/MappingLoader.scala" />
         <option value="$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/SensorMappingPersistentEntity.scala" />
+        <option value="$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/MappingLoader.scala" />
+        <option value="$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/MappingServiceImpl.scala" />
+        <option value="$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/NodeReadEventsProcessor.scala" />
       </list>
     </option>
   </component>
@@ -283,6 +297,40 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="impl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="smartsolutions-lagom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ss-mapping-impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NodeReadEventsProcessor.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -903,7 +951,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487968405398</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implemented deletion">
+      <created>1488010145420</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1488010145420</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -989,7 +1044,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added sample sensor mapping service" />
     <MESSAGE value="Added mock impl for service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added mock impl for service" />
+    <MESSAGE value="Implemented deletion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented deletion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1002,34 +1058,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.coursier/cache/v1/https/repo1.maven.org/maven2/com/typesafe/play/play_2.11/2.5.10/play_2.11-2.5.10-sources.jar!/play/utils/Threads.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="22" column="6" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.coursier/cache/v1/https/repo1.maven.org/maven2/com/typesafe/play/play-ws_2.11/2.5.10/play-ws_2.11-2.5.10-sources.jar!/play/api/libs/ws/ahc/AhcWS.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="552" column="6" lean-forward="false" selection-start-line="552" selection-start-column="6" selection-end-line="552" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.coursier/cache/v1/https/repo1.maven.org/maven2/com/lightbend/lagom/lagom-scaladsl-api_2.11/1.3.0-RC2/lagom-scaladsl-api_2.11-1.3.0-RC2-sources.jar!/com/lightbend/lagom/scaladsl/api/ServiceCall.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1458">
-          <caret line="87" column="6" lean-forward="false" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.coursier/cache/v1/https/repo1.maven.org/maven2/com/lightbend/lagom/lagom-scaladsl-dev-mode_2.11/1.3.0-RC2/lagom-scaladsl-dev-mode_2.11-1.3.0-RC2-sources.jar!/com/lightbend/lagom/scaladsl/devmode/LagomDevModeComponents.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="41" column="20" lean-forward="false" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.coursier/cache/v1/https/repo1.maven.org/maven2/com/lightbend/lagom/lagom-scaladsl-dev-mode_2.11/1.3.0-RC2/lagom-scaladsl-dev-mode_2.11-1.3.0-RC2-sources.jar!/com/lightbend/lagom/internal/scaladsl/registry/ServiceRegistration.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -1390,22 +1418,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ss-mapping-api/src/main/scala/com/ss/mapping/api/MappingService.scala">
+    <entry file="file://$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/SensorMappingPersistentEntity.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+        <state relative-caret-position="666">
+          <caret line="66" column="93" lean-forward="false" selection-start-line="66" selection-start-column="93" selection-end-line="66" selection-end-column="93" />
           <folding>
-            <element signature="e#28#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/MappingServiceImpl.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#29#48#0" expanded="true" />
+            <element signature="e#29#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1418,20 +1436,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ss-mapping-api/src/main/scala/com/ss/mapping/api/MappingService.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+          <folding>
+            <element signature="e#28#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.coursier/cache/v1/https/repo1.maven.org/maven2/com/lightbend/lagom/lagom-scaladsl-server_2.11/1.3.0/lagom-scaladsl-server_2.11-1.3.0-sources.jar!/com/lightbend/lagom/scaladsl/server/LagomServer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/MappingServiceImpl.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="75" lean-forward="false" selection-start-line="12" selection-start-column="75" selection-end-line="12" selection-end-column="75" />
+          <folding>
+            <element signature="e#29#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.coursier/cache/v1/https/repo1.maven.org/maven2/com/lightbend/lagom/lagom-scaladsl-persistence-cassandra_2.11/1.3.0/lagom-scaladsl-persistence-cassandra_2.11-1.3.0-sources.jar!/com/lightbend/lagom/scaladsl/persistence/cassandra/CassandraPersistenceComponents.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="48" column="35" lean-forward="false" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#137#215#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.coursier/cache/v1/https/repo1.maven.org/maven2/com/lightbend/lagom/lagom-scaladsl-persistence-cassandra_2.11/1.3.0/lagom-scaladsl-persistence-cassandra_2.11-1.3.0-sources.jar!/com/lightbend/lagom/scaladsl/persistence/cassandra/CassandraSession.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#137#178#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/MappingLoader.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+        <state relative-caret-position="720">
+          <caret line="45" column="39" lean-forward="true" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
           <folding>
             <element signature="e#29#100#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/SensorMappingPersistentEntity.scala">
+    <entry file="file://$PROJECT_DIR$/ss-mapping-impl/src/main/scala/com/ss/mapping/impl/NodeReadEventsProcessor.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="57" column="72" lean-forward="false" selection-start-line="57" selection-start-column="72" selection-end-line="57" selection-end-column="72" />
+        <state relative-caret-position="486">
+          <caret line="27" column="93" lean-forward="false" selection-start-line="27" selection-start-column="93" selection-end-line="27" selection-end-column="93" />
           <folding>
             <element signature="e#29#45#0" expanded="true" />
           </folding>

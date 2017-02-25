@@ -2,7 +2,7 @@ package com.ss.mapping.impl
 
 import akka.Done
 import com.lightbend.lagom.scaladsl.api.transport.NotFound
-import com.lightbend.lagom.scaladsl.persistence.PersistentEntity
+import com.lightbend.lagom.scaladsl.persistence.{AggregateEvent, AggregateEventShards, AggregateEventTag, PersistentEntity}
 import com.lightbend.lagom.scaladsl.persistence.PersistentEntity.ReplyType
 import com.lightbend.lagom.scaladsl.playjson.{JsonSerializer, JsonSerializerRegistry}
 import com.ss.mapping.api.SensorMapping
@@ -63,7 +63,14 @@ case object LoadMapping extends SensorMappingCommand with ReplyType[SensorMappin
 object RegisterMapping {
   implicit val format: Format[RegisterMapping] = Json.format[RegisterMapping]
 }
-sealed trait SensorMappingEvent
+sealed trait SensorMappingEvent extends AggregateEvent[SensorMappingEvent] {
+  override def aggregateTag: AggregateEventShards[SensorMappingEvent] = SensorMappingEvent.Tag
+}
+object SensorMappingEvent {
+  val numShards = 20
+  val Tag: AggregateEventShards[SensorMappingEvent] = AggregateEventTag.sharded[SensorMappingEvent](numShards)
+
+}
 case class MappingRegistered(mapping: SensorMapping) extends SensorMappingEvent
 case object MappingUnregistered extends SensorMappingEvent {
   implicit val format: Format[MappingUnregistered.type] = JsonSerializer.emptySingletonFormat(this)
